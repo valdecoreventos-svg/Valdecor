@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valdecor | Decoração & Cerimonial de Eventos</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+    :root {
+      --fundo: #fff4f1;
+      --rose: #ff776d;
+      --rose-escuro: #c95d55;
+      --vinho: #6f3d3a;
+      --texto: #4f3734;
+      --branco: #ffffff;
+      --sombra: 0 18px 45px rgba(201, 93, 85, 0.16);
+      --radius: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 95px 8%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .titulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      color: var(--vinho);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .texto {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #75504b;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--rose), #e99a91);
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 12px 28px rgba(255, 119, 109, 0.3);
+      transition: all 0.35s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(255, 119, 109, 0.38);
+    }
+
+    /* MENU SUPERIOR */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 22px 8%;
+      transition: 0.35s ease;
+    }
+
+    header.rolado {
+      background: rgba(255, 244, 241, 0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(111, 61, 58, 0.08);
+      padding: 14px 8%;
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 700;
+      transition: 0.35s ease;
+    }
+
+    header.rolado .nav-logo {
+      color: var(--vinho);
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    .menu a {
+      color: white;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: 0.35s ease;
+      position: relative;
+    }
+
+    header.rolado .menu a {
+      color: var(--vinho);
+    }
+
+    .menu a::after {
+      content: "";
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      transition: 0.3s ease;
+    }
+
+    .menu a:hover::after {
+      width: 100%;
+    }
+
+    .menu-mobile {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    header.rolado .menu-mobile {
+      color: var(--vinho);
+    }
+
+    /* HOME / CAPA */
+    .home {
+      text-align: center;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(70, 39, 35, 0.2), rgba(70, 39, 35, 0.24)),
+        url('capa-desktop.jpg') center center / cover no-repeat;
+      color: white;
+    }
+
+    .home::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.18));
+      pointer-events: none;
+    }
+
+    .home-conteudo {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: 0 auto;
+      padding-top: 40px;
+    }
+
+    .logo-principal {
+      width: 210px;
+      margin: 0 auto 24px;
+    }
+
+    .home h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4.2rem, 12vw, 8rem);
+      line-height: 0.9;
+      font-weight: 700;
+      margin-bottom: 14px;
+      text-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+
+    .home h2 {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .home p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      margin-bottom: 34px;
+    }
+
+    /* QUEM SOMOS */
+    .quem-somos {
+      background: var(--fundo);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .foto-sobre {
+      border-radius: 42px;
+      overflow: hidden;
+      min-height: 500px;
+      box-shadow: var(--sombra);
+      background: #f8ddd7;
+    }
+
+    .foto-sobre img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+    }
+
+    .card-texto {
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(255,119,109,0.14);
+      border-radius: 42px;
+      padding: 50px;
+      box-shadow: var(--sombra);
+    }
+
+    /* SERVIÇOS */
+    .servicos {
+      background: linear-gradient(180deg, #fff4f1, #fbe8e3);
+    }
+
+    .intro-centro {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 45px;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .servico-card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,119,109,0.14);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: var(--sombra);
+      transition: 0.35s ease;
+    }
+
+    .servico-card:hover {
+      transform: translateY(-8px);
+      background: white;
+    }
+
+    .icone {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: #f8ddd7;
+      color: var(--rose-escuro);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icone svg {
+      width: 31px;
+      height: 31px;
+      stroke-width: 1.5;
+    }
+
+    .servico-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--vinho);
+      margin-bottom: 12px;
+    }
+
+    .cta-servicos {
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .cta-servicos p {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--vinho);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* GALERIA */
+    .galeria {
+      background: var(--fundo);
+      overflow: hidden;
+    }
+
+    .galeria .container {
+      max-width: 100%;
+    }
+
+    .galeria-topo {
+      max-width: 800px;
+      margin: 0 auto 42px;
+      text-align: center;
+      padding: 0 8%;
+    }
+
+    .carrossel {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .faixa-fotos {
+      display: flex;
+      gap: 24px;
+      animation: rolarFotos 30s linear infinite;
+    }
+
+    .faixa-fotos:hover {
+      animation-play-state: paused;
+    }
+
+    .foto-galeria {
+      min-width: 340px;
+      height: 440px;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      background: white;
+    }
+
+    .foto-galeria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.7s ease;
+    }
+
+    .foto-galeria:hover img {
+      transform: scale(1.06);
+    }
+
+    @keyframes rolarFotos {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-364px * 6)); }
+    }
+
+    /* AVALIAÇÕES - DEIXEI PRONTA, MAS OCULTA POR ENQUANTO */
+    .avaliacoes {
+      display: none;
+      background: #fbe8e3;
+    }
+
+    .avaliacoes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .avaliacao-card {
+      background: rgba(255,255,255,0.72);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+    }
+
+    /* CONTATO FINAL */
+    .contato {
+      text-align: center;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(255, 244, 241, 0.88), rgba(255, 244, 241, 0.95)),
+        url('fundo-final.jpg') center center / cover no-repeat;
+    }
+
+    .contato-box {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .logo-final {
+      width: 180px;
+      margin: 0 auto 24px;
+    }
+
+    .contato h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      color: var(--vinho);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .contato p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #75504b;
+      margin-bottom: 30px;
+    }
+
+    .social {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--rose-escuro);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 8%;
+      background: #f7e5df;
+      color: #75504b;
+      font-size: 0.86rem;
+    }
+
+    /* BOTÃO WHATSAPP FLUTUANTE */
+    .whatsapp-fixo {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), #d96f66);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 14px 35px rgba(201, 93, 85, 0.38);
+      transition: 0.35s ease;
+    }
+
+    .whatsapp-fixo:hover {
+      transform: scale(1.08) translateY(-3px);
+    }
+
+    .whatsapp-fixo svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* ANIMAÇÃO AO ROLAR */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.ativo {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      section {
+        padding: 80px 6%;
+      }
+
+      .menu-mobile {
+        display: block;
+      }
+
+      .menu {
+        position: absolute;
+        top: 72px;
+        right: 6%;
+        width: 230px;
+        padding: 22px;
+        border-radius: 22px;
+        background: rgba(255, 244, 241, 0.96);
+        box-shadow: var(--sombra);
+        flex-direction: column;
+        gap: 18px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s ease;
+      }
+
+      .menu.aberto {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .menu a,
+      header.rolado .menu a {
+        color: var(--vinho);
+      }
+
+      .home {
+        background:
+          linear-gradient(rgba(70, 39, 35, 0.2), rgba(70, 39, 35, 0.24)),
+          url('capa-mobile.jpg') center center / cover no-repeat;
+      }
+
+      .logo-principal {
+        width: 160px;
+      }
+
+      .sobre-grid,
+      .servicos-grid,
+      .avaliacoes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-texto {
+        padding: 34px 26px;
+      }
+
+      .foto-sobre,
+      .foto-sobre img {
+        min-height: 390px;
+      }
+
+      .foto-galeria {
+        min-width: 260px;
+        height: 350px;
+      }
+
+      @keyframes rolarFotos {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-284px * 6)); }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- EDITE AQUI OS LINKS -->
+  <script>
+    const LINK_WHATSAPP = "https://wa.me/5531999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20com%20a%20Valdecor.";
+    const LINK_INSTAGRAM = "https://www.instagram.com/valdecor";
+  </script>
+
+  <header id="topo">
+    <nav>
+      <a href="#home" class="nav-logo">Valdecor</a>
+
+      <button class="menu-mobile" id="btnMenu" aria-label="Abrir menu">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Fotos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="#" class="whatsapp-fixo whatsapp-link" target="_blank" aria-label="WhatsApp Valdecor">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.5 22l5.6-1.1A9.8 9.8 0 1 0 12 2Z" />
+      <path d="M8.7 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.3.5.8 1.3 1.7 2 .9.8 1.7 1 2.2 1.2.3.1.5 0 .6-.2l.7-.8c.2-.2.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .5-.3 1.6-1.2 2.1-.6.4-1.5.5-2.7.1-2.4-.8-4.4-2.5-5.8-4.5-1-1.4-1.7-2.9-1.1-4.1Z" />
+    </svg>
+  </a>
+
+  <!-- 1. HOME / CAPA -->
+  <section class="home" id="home">
+    <div class="home-conteudo reveal">
+      <!-- TROQUE A LOGO AQUI -->
+      <img src="logo-valdecor.png" alt="Logo Valdecor" class="logo-principal">
+
+      <h1>Valdecor</h1>
+      <h2>Decoração & Cerimonial de Eventos</h2>
+      <p>Transformamos sonhos em cenários inesquecíveis.</p>
+      <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
+    </div>
+  </section>
+
+  <!-- 2. QUEM SOMOS -->
+  <section class="quem-somos" id="quem-somos">
+    <div class="container sobre-grid reveal">
+      <div class="foto-sobre">
+        <!-- TROQUE A FOTO DA RESPONSÁVEL AQUI -->
+        <img src="responsavel.jpg" alt="Responsável pela Valdecor">
+      </div>
+
+      <div class="card-texto">
+        <h2 class="titulo">Quem Somos</h2>
+        <p class="texto">
+          A Valdecor nasceu do amor pelos detalhes e da paixão por transformar momentos especiais em memórias inesquecíveis. Atuamos com decoração e cerimonial, cuidando de cada etapa do seu evento com carinho, organização e dedicação.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="container reveal">
+      <div class="intro-centro">
+        <h2 class="titulo">Serviços Ofertados</h2>
+        <p class="texto">
+          Cuidamos da estética, da organização e dos detalhes para que seu evento seja vivido com leveza, beleza e tranquilidade.
+        </p>
+      </div>
+
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <div class="icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-4.7-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.3-7 11-7 11Z"/><path d="M12 7v14"/></svg>
+          </div>
+          <h3>Decoração</h3>
+          <p class="texto">Projetos personalizados que refletem o estilo e o sonho de cada cliente.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 2v4M16 2v4M4 9h16M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="m8 14 2 2 5-5"/></svg>
+          </div>
+          <h3>Cerimonial</h3>
+          <p class="texto">Organização e coordenação para que você viva seu grande dia com tranquilidade.</p>
+        </div>
+
+        <div class="servico-card">
+          <div class="icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 18h4"/></svg>
+          </div>
+          <h3>Orçamentos</h3>
+          <p class="texto">Entre em contato e receba uma proposta pensada para o seu evento.</p>
+        </div>
+      </div>
+
+      <div class="cta-servicos">
+        <p>Vamos conversar sobre o seu evento?</p>
+        <a href="#" class="btn whatsapp-link">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GALERIA AUTOMÁTICA -->
+  <section class="galeria" id="galeria">
+    <div class="container reveal">
+      <div class="galeria-topo">
+        <h2 class="titulo">Galeria</h2>
+        <p class="texto">
+          Confira alguns dos ambientes que criamos e imagine o que podemos fazer no seu evento.
+        </p>
+      </div>
+
+      <div class="carrossel">
+        <div class="faixa-fotos">
+          <!-- TROQUE AS FOTOS AQUI. Mantenha os nomes ou altere o src -->
+          <div class="foto-galeria"><img src="galeria1.jpg" alt="Decoração Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria2.jpg" alt="Mesa decorada Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria4.jpg" alt="Flores Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria5.jpg" alt="Evento Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria6.jpg" alt="Detalhes Valdecor"></div>
+
+          <!-- Fotos duplicadas para o carrossel ficar infinito -->
+          <div class="foto-galeria"><img src="galeria1.jpg" alt="Decoração Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria2.jpg" alt="Mesa decorada Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria4.jpg" alt="Flores Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria5.jpg" alt="Evento Valdecor"></div>
+          <div class="foto-galeria"><img src="galeria6.jpg" alt="Detalhes Valdecor"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AVALIAÇÕES: seção pronta para ativar depois -->
+  <section class="avaliacoes" id="avaliacoes">
+    <div class="container">
+      <div class="intro-centro">
+        <h2 class="titulo">Avaliações</h2>
+        <p class="texto">Depoimentos de clientes que viveram momentos especiais com a Valdecor.</p>
+      </div>
+
+      <div class="avaliacoes-grid">
+        <div class="avaliacao-card"><p class="texto">“Foi tudo perfeito, cada detalhe superou nossas expectativas.”</p></div>
+        <div class="avaliacao-card"><p class="texto">“Equipe organizada, atenciosa e muito cuidadosa.”</p></div>
+        <div class="avaliacao-card"><p class="texto">“A decoração ficou exatamente como sonhamos.”</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTATO FINAL -->
+  <section class="contato" id="contato">
+    <div class="contato-box reveal">
+      <!-- TROQUE A LOGO FINAL AQUI -->
+      <img src="logo-valdecor.png" alt="Logo Valdecor" class="logo-final">
+
+      <h2>Seu evento merece uma decoração inesquecível.</h2>
+      <p>
+        Fale com a Valdecor e solicite um orçamento personalizado para transformar o seu momento em uma experiência única.
+      </p>
+      <a href="#" class="btn whatsapp-link">Solicitar orçamento pelo WhatsApp</a>
+
+      <div class="social">
+        <a href="#" class="instagram-link" target="_blank">Instagram</a>
+        <a href="#" class="whatsapp-link" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Valdecor — Decoração & Cerimonial de Eventos</p>
+  </footer>
+
+  <script>
+    // Links editáveis
+    document.querySelectorAll('.whatsapp-link').forEach(link => {
+      link.href = LINK_WHATSAPP;
+    });
+
+    document.querySelectorAll('.instagram-link').forEach(link => {
+      link.href = LINK_INSTAGRAM;
+    });
+
+    // Menu muda ao rolar
+    const topo = document.getElementById('topo');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        topo.classList.add('rolado');
+      } else {
+        topo.classList.remove('rolado');
+      }
+    });
+
+    // Menu mobile
+    const btnMenu = document.getElementById('btnMenu');
+    const menu = document.getElementById('menu');
+
+    btnMenu.addEventListener('click', () => {
+      menu.classList.toggle('aberto');
+    });
+
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('aberto');
+      });
+    });
+
+    // Animação ao rolar
+    const elementos = document.querySelectorAll('.reveal');
+
+    function revelarAoRolar() {
+      const alturaTela = window.innerHeight;
+
+      elementos.forEach(elemento => {
+        const topoElemento = elemento.getBoundingClientRect().top;
+
+        if (topoElemento < alturaTela - 120) {
+          elemento.classList.add('ativo');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revelarAoRolar);
+    window.addEventListener('load', revelarAoRolar);
+  </script>
+</body>
+</html>
