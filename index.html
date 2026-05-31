@@ -397,11 +397,12 @@
       margin: 0 auto;
       position: relative;
       z-index: 2;
+      transform: translateY(-22px);
     }
 
     .logo-final {
-      width: 180px;
-      margin: 0 auto 24px;
+      width: 230px;
+      margin: 0 auto 18px;
     }
 
     .contato h2 {
@@ -409,17 +410,26 @@
       font-size: clamp(2.2rem, 5vw, 4rem);
       color: white;
       line-height: 1.08;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .social {
-      margin-top: 26px;
+      margin-top: 22px;
       display: flex;
       justify-content: center;
-      gap: 18px;
+      align-items: center;
+      gap: 22px;
       flex-wrap: wrap;
       color: white;
       font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+
+    .social a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
     }
 
     footer {
@@ -537,6 +547,14 @@
         height: 350px;
       }
 
+      .contato-box {
+        transform: translateY(-12px);
+      }
+
+      .logo-final {
+        width: 200px;
+      }
+
       .contato h2 {
         font-size: clamp(2rem, 9vw, 3.2rem);
       }
@@ -562,7 +580,7 @@
         <img src="logo-escrita-valdecor.png" alt="Valdecor">
       </a>
 
- 
+```
   <button class="menu-mobile" id="btnMenu" aria-label="Abrir menu">☰</button>
 
   <ul class="menu" id="menu">
@@ -573,7 +591,7 @@
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
- 
+```
 
   </header>
 
@@ -591,7 +609,7 @@
       <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
     </div>
 
- 
+```
 <div class="container sobre-grid reveal">
   <div class="foto-sobre">
     <img src="responsavel.jpeg" alt="Responsável pela Valdecor">
@@ -604,7 +622,7 @@
     </p>
   </div>
 </div>
- 
+```
 
   </section>
 
@@ -617,7 +635,7 @@
         </p>
       </div>
 
- 
+```
   <div class="servicos-grid">
     <div class="servico-card">
       <div class="icone">
@@ -647,7 +665,7 @@
     <a href="#" class="btn whatsapp-link">Vamos conversar sobre o seu evento?</a>
   </div>
 </div>
- 
+```
 
   </section>
 
@@ -660,7 +678,7 @@
         </p>
       </div>
 
- 
+```
   <div class="carrossel">
     <div class="faixa-fotos">
       <div class="foto-galeria"><img src="galeria1.png" alt="Decoração Valdecor"></div>
@@ -679,7 +697,7 @@
     </div>
   </div>
 </div>
- 
+```
 
   </section>
 
@@ -690,14 +708,14 @@
         <p class="texto">Depoimentos de clientes que viveram momentos especiais com a Valdecor.</p>
       </div>
 
- 
+```
   <div class="avaliacoes-grid">
     <div class="avaliacao-card"><p class="texto">“Foi tudo perfeito, cada detalhe superou nossas expectativas.”</p></div>
     <div class="avaliacao-card"><p class="texto">“Equipe organizada, atenciosa e muito cuidadosa.”</p></div>
     <div class="avaliacao-card"><p class="texto">“A decoração ficou exatamente como sonhamos.”</p></div>
   </div>
 </div>
- 
+```
 
   </section>
 
@@ -707,13 +725,13 @@
       <h2>Seu evento merece ser inesquecível em cada detalhe.</h2>
       <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
 
- 
+```
   <div class="social">
     <a href="#" class="instagram-link" target="_blank">Instagram</a>
     <a href="#" class="whatsapp-link" target="_blank">WhatsApp</a>
   </div>
 </div>
- 
+```
 
   </section>
 
