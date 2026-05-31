@@ -757,17 +757,24 @@
     });
 
     const btnMenu = document.getElementById('btnMenu');
-    const menu = document.getElementById('menu');
+const menu = document.getElementById('menu');
 
-    btnMenu.addEventListener('click', () => {
-      menu.classList.toggle('aberto');
-    });
+btnMenu.addEventListener('click', () => {
+  menu.classList.toggle('aberto');
 
-    document.querySelectorAll('.menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('aberto');
-      });
-    });
+  if (menu.classList.contains('aberto')) {
+    btnMenu.innerHTML = '✕';
+  } else {
+    btnMenu.innerHTML = '☰';
+  }
+});
+
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('aberto');
+    btnMenu.innerHTML = '☰';
+  });
+});
 
     const elementos = document.querySelectorAll('.reveal');
 
