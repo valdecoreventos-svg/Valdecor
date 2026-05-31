@@ -497,7 +497,20 @@
       @keyframes rolarFotos {
         from { transform: translateX(0); }
         to { transform: translateX(calc(-284px * 6)); }
-      }
+     .carrossel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+
+.faixa-fotos {
+  animation: none;
+  width: max-content;
+}}
     }
   </style>
 </head>
