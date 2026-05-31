@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +15,6 @@
       --rose-escuro: #c95d55;
       --vinho: #6f3d3a;
       --texto: #4f3734;
-      --branco: #ffffff;
       --sombra: 0 18px 45px rgba(201, 93, 85, 0.16);
       --radius: 28px;
     }
@@ -100,7 +100,6 @@
       box-shadow: 0 18px 38px rgba(255, 119, 109, 0.38);
     }
 
-    /* MENU SUPERIOR */
     header {
       position: fixed;
       top: 0;
@@ -184,7 +183,6 @@
       color: var(--vinho);
     }
 
-    /* HOME / CAPA */
     .home {
       text-align: center;
       justify-content: center;
@@ -201,7 +199,6 @@
       z-index: 20;
     }
 
-    /* QUEM SOMOS */
     .quem-somos {
       background: var(--fundo);
     }
@@ -236,7 +233,6 @@
       box-shadow: var(--sombra);
     }
 
-    /* SERVIÇOS */
     .servicos {
       background: linear-gradient(180deg, #fff4f1, #fbe8e3);
     }
@@ -287,11 +283,13 @@
       height: 31px;
       stroke-width: 1.5;
     }
-.icone img{
-  width:32px;
-  height:32px;
-  object-fit:contain;
-}
+
+    .icone img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+    }
+
     .servico-card h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.8rem;
@@ -304,7 +302,6 @@
       margin-top: 16px;
     }
 
-    /* GALERIA */
     .galeria {
       background: var(--fundo);
       overflow: hidden;
@@ -322,8 +319,11 @@
     }
 
     .titulo-galeria {
-      font-size: clamp(2.2rem, 4.8vw, 4rem);
-      white-space: nowrap;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      white-space: normal;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .carrossel {
@@ -366,7 +366,6 @@
       to { transform: translateX(calc(-364px * 6)); }
     }
 
-    /* AVALIAÇÕES - OCULTA POR ENQUANTO */
     .avaliacoes {
       display: none;
       background: #fbe8e3;
@@ -385,12 +384,11 @@
       box-shadow: var(--sombra);
     }
 
-    /* CONTATO FINAL */
     .contato {
       text-align: center;
       justify-content: center;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.58)),
+        linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.82)),
         url('fundo-final.jpg') center center / cover no-repeat;
     }
 
@@ -432,7 +430,6 @@
       font-size: 0.86rem;
     }
 
-    /* BOTÃO WHATSAPP FLUTUANTE */
     .whatsapp-fixo {
       position: fixed;
       right: 20px;
@@ -459,7 +456,6 @@
       height: 30px;
     }
 
-    /* ANIMAÇÃO AO ROLAR */
     .reveal {
       opacity: 0;
       transform: translateY(35px);
@@ -471,7 +467,6 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVO */
     @media (max-width: 900px) {
       section {
         padding: 80px 6%;
@@ -534,7 +529,6 @@
       }
 
       .titulo-galeria {
-        white-space: normal;
         font-size: clamp(2rem, 9vw, 3.2rem);
       }
 
@@ -553,10 +547,10 @@
       }
     }
   </style>
+
 </head>
 
 <body>
-  <!-- EDITE AQUI OS LINKS -->
   <script>
     const LINK_WHATSAPP = "https://wa.me/5531999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20com%20a%20Valdecor.";
     const LINK_INSTAGRAM = "https://www.instagram.com/valdecor";
@@ -568,19 +562,21 @@
         <img src="logo-escrita-valdecor.png" alt="Valdecor">
       </a>
 
-      <button class="menu-mobile" id="btnMenu" aria-label="Abrir menu">☰</button>
+```
+  <button class="menu-mobile" id="btnMenu" aria-label="Abrir menu">☰</button>
 
-      <ul class="menu" id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#quem-somos">Quem Somos</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#galeria">Fotos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+  <ul class="menu" id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#quem-somos">Quem Somos</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#galeria">Fotos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+```
+
   </header>
 
-  <!-- WHATSAPP FLUTUANTE -->
   <a href="#" class="whatsapp-fixo whatsapp-link" target="_blank" aria-label="WhatsApp Valdecor">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
       <path d="M12 2a9.7 9.7 0 0 0-8.4 14.6L2.5 22l5.6-1.1A9.8 9.8 0 1 0 12 2Z" />
@@ -588,76 +584,73 @@
     </svg>
   </a>
 
-  <!-- 1. HOME / CAPA -->
   <section class="home" id="home"></section>
 
-  <!-- 2. QUEM SOMOS -->
   <section class="quem-somos" id="quem-somos">
     <div class="cta-home">
       <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
     </div>
 
-    <div class="container sobre-grid reveal">
-      <div class="foto-sobre">
-        <img src="responsavel.jpeg" alt="Responsável pela Valdecor">
-      </div>
+```
+<div class="container sobre-grid reveal">
+  <div class="foto-sobre">
+    <img src="responsavel.jpeg" alt="Responsável pela Valdecor">
+  </div>
 
-      <div class="card-texto">
-        <h2 class="titulo titulo-sobre">Quem Somos</h2>
-        <p class="texto">
-          A Valdecor nasceu do amor pelos detalhes e da paixão por transformar momentos especiais em memórias inesquecíveis. Atuamos com decoração e cerimonial, cuidando de cada etapa do seu evento com carinho, organização e dedicação.
-        </p>
-      </div>
-    </div>
+  <div class="card-texto">
+    <h2 class="titulo titulo-sobre">Quem Somos</h2>
+    <p class="texto">
+      A Valdecor nasceu do amor pelos detalhes e da paixão por transformar momentos especiais em memórias inesquecíveis. Atuamos com decoração e cerimonial, cuidando de cada etapa do seu evento com carinho, organização e dedicação.
+    </p>
+  </div>
+</div>
+```
+
   </section>
 
-  <!-- 3. SERVIÇOS -->
   <section class="servicos" id="servicos">
     <div class="container reveal">
       <div class="intro-centro">
         <h2 class="titulo">Serviços Ofertados</h2>
         <p class="texto">
-         Cuidamos de cada detalhe para que você viva seu evento com leveza, tranquilidade e a certeza de que tudo acontecerá como sonhou.
+          Cuidamos de cada detalhe para que você viva seu evento com leveza, tranquilidade e a certeza de que tudo acontecerá como sonhou.
         </p>
       </div>
 
-      <div class="servicos-grid">
-
-  <div class="servico-card">
-    <div class="icone">
- <div class="icone">
-  <img src="icone-ramo.png" alt="Decoração">
-</div>
-
-    <h3>Decoração</h3>
-    <p class="texto">
-      Projetos personalizados que refletem o estilo e o sonho de cada cliente.
-    </p>
-  </div>
-
-  <div class="servico-card">
-    <div class="icone">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M8 2v4M16 2v4M4 9h16M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
-        <path d="m8 14 2 2 5-5"/>
-      </svg>
-    </div>
-
-    <h3>Cerimonial</h3>
-    <p class="texto">
-      Organização e coordenação para que você viva seu grande dia com tranquilidade.
-    </p>
-  </div>
-
-</div>
-
-      <div class="cta-servicos">
-        <a href="#" class="btn whatsapp-link">Vamos conversar sobre o seu evento?</a>
+```
+  <div class="servicos-grid">
+    <div class="servico-card">
+      <div class="icone">
+        <img src="icone-ramo.png" alt="Ícone de decoração">
       </div>
+      <h3>Decoração</h3>
+      <p class="texto">
+        Projetos personalizados que refletem o estilo e o sonho de cada cliente.
+      </p>
     </div>
+
+    <div class="servico-card">
+      <div class="icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M8 2v4M16 2v4M4 9h16M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
+          <path d="m8 14 2 2 5-5"/>
+        </svg>
+      </div>
+      <h3>Cerimonial</h3>
+      <p class="texto">
+        Organização e coordenação para que você viva seu grande dia com tranquilidade.
+      </p>
+    </div>
+  </div>
+
+  <div class="cta-servicos">
+    <a href="#" class="btn whatsapp-link">Vamos conversar sobre o seu evento?</a>
+  </div>
+</div>
+```
+
   </section>
 
-  <!-- 4. GALERIA AUTOMÁTICA -->
   <section class="galeria" id="galeria">
     <div class="container reveal">
       <div class="galeria-topo">
@@ -667,27 +660,29 @@
         </p>
       </div>
 
-      <div class="carrossel">
-        <div class="faixa-fotos">
-          <div class="foto-galeria"><img src="galeria1.png" alt="Decoração Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria2.png" alt="Mesa decorada Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria4.jpg" alt="Flores Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria5.png" alt="Evento Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria6.png" alt="Detalhes Valdecor"></div>
+```
+  <div class="carrossel">
+    <div class="faixa-fotos">
+      <div class="foto-galeria"><img src="galeria1.png" alt="Decoração Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria2.png" alt="Mesa decorada Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria4.jpg" alt="Flores Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria5.png" alt="Evento Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria6.png" alt="Detalhes Valdecor"></div>
 
-          <div class="foto-galeria"><img src="galeria1.png" alt="Decoração Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria2.png" alt="Mesa decorada Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria4.jpg" alt="Flores Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria5.png" alt="Evento Valdecor"></div>
-          <div class="foto-galeria"><img src="galeria6.png" alt="Detalhes Valdecor"></div>
-        </div>
-      </div>
+      <div class="foto-galeria"><img src="galeria1.png" alt="Decoração Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria2.png" alt="Mesa decorada Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria4.jpg" alt="Flores Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria5.png" alt="Evento Valdecor"></div>
+      <div class="foto-galeria"><img src="galeria6.png" alt="Detalhes Valdecor"></div>
     </div>
+  </div>
+</div>
+```
+
   </section>
 
-  <!-- 5. AVALIAÇÕES: pronta para ativar depois -->
   <section class="avaliacoes" id="avaliacoes">
     <div class="container">
       <div class="intro-centro">
@@ -695,28 +690,31 @@
         <p class="texto">Depoimentos de clientes que viveram momentos especiais com a Valdecor.</p>
       </div>
 
-      <div class="avaliacoes-grid">
-        <div class="avaliacao-card"><p class="texto">“Foi tudo perfeito, cada detalhe superou nossas expectativas.”</p></div>
-        <div class="avaliacao-card"><p class="texto">“Equipe organizada, atenciosa e muito cuidadosa.”</p></div>
-        <div class="avaliacao-card"><p class="texto">“A decoração ficou exatamente como sonhamos.”</p></div>
-      </div>
-    </div>
+```
+  <div class="avaliacoes-grid">
+    <div class="avaliacao-card"><p class="texto">“Foi tudo perfeito, cada detalhe superou nossas expectativas.”</p></div>
+    <div class="avaliacao-card"><p class="texto">“Equipe organizada, atenciosa e muito cuidadosa.”</p></div>
+    <div class="avaliacao-card"><p class="texto">“A decoração ficou exatamente como sonhamos.”</p></div>
+  </div>
+</div>
+```
+
   </section>
 
-  <!-- 6. CONTATO FINAL -->
   <section class="contato" id="contato">
     <div class="contato-box reveal">
       <img src="logo-valdecor.png" alt="Logo Valdecor" class="logo-final">
-
       <h2>Seu evento merece ser inesquecível em cada detalhe.</h2>
-
       <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
 
-      <div class="social">
-        <a href="#" class="instagram-link" target="_blank">Instagram</a>
-        <a href="#" class="whatsapp-link" target="_blank">WhatsApp</a>
-      </div>
-    </div>
+```
+  <div class="social">
+    <a href="#" class="instagram-link" target="_blank">Instagram</a>
+    <a href="#" class="whatsapp-link" target="_blank">WhatsApp</a>
+  </div>
+</div>
+```
+
   </section>
 
   <footer>
@@ -772,5 +770,6 @@
     window.addEventListener('scroll', revelarAoRolar);
     window.addEventListener('load', revelarAoRolar);
   </script>
+
 </body>
 </html>
