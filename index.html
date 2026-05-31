@@ -184,55 +184,17 @@
     .home {
       text-align: center;
       justify-content: center;
-      background:
-        linear-gradient(rgba(70, 39, 35, 0.2), rgba(70, 39, 35, 0.24)),
-        url('capa-desktop.jpg') center center / cover no-repeat;
+      background: url('capa-desktop.jpg') center center / cover no-repeat;
       color: white;
-    }
-
-    .home::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.18));
-      pointer-events: none;
+      padding: 0;
     }
 
     .home-conteudo {
-      position: relative;
-      z-index: 2;
-      max-width: 780px;
-      margin: 0 auto;
-      padding-top: 40px;
-    }
-
-    .logo-principal {
-      width: 210px;
-      margin: 0 auto 24px;
-    }
-
-    .home h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4.2rem, 12vw, 8rem);
-      line-height: 0.9;
-      font-weight: 700;
-      margin-bottom: 14px;
-      text-shadow: 0 8px 30px rgba(0,0,0,0.18);
-    }
-
-    .home h2 {
-      font-size: clamp(1rem, 3vw, 1.4rem);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-
-    .home p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      line-height: 1.2;
-      margin-bottom: 34px;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
     }
 
     /* QUEM SOMOS */
@@ -397,7 +359,7 @@
       to { transform: translateX(calc(-364px * 6)); }
     }
 
-    /* AVALIAÇÕES - DEIXEI PRONTA, MAS OCULTA POR ENQUANTO */
+    /* AVALIAÇÕES - OCULTA POR ENQUANTO */
     .avaliacoes {
       display: none;
       background: #fbe8e3;
@@ -546,13 +508,12 @@
       }
 
       .home {
-        background:
-          linear-gradient(rgba(70, 39, 35, 0.2), rgba(70, 39, 35, 0.24)),
-          url('capa-mobile.jpg') center center / cover no-repeat;
+        background: url('capa-mobile.jpg') center center / cover no-repeat;
+        padding: 0;
       }
 
-      .logo-principal {
-        width: 160px;
+      .home-conteudo {
+        bottom: 90px;
       }
 
       .sobre-grid,
@@ -616,11 +577,7 @@
 
   <!-- 1. HOME / CAPA -->
   <section class="home" id="home">
-    <div class="home-conteudo reveal">
-      
-      <h1>Valdecor</h1>
-      <h2>Decoração & Cerimonial de Eventos</h2>
-      <p>Transformamos sonhos em cenários inesquecíveis.</p>
+    <div class="home-conteudo">
       <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
     </div>
   </section>
@@ -629,7 +586,6 @@
   <section class="quem-somos" id="quem-somos">
     <div class="container sobre-grid reveal">
       <div class="foto-sobre">
-        <!-- TROQUE A FOTO DA RESPONSÁVEL AQUI -->
         <img src="responsavel.jpg" alt="Responsável pela Valdecor">
       </div>
 
@@ -697,7 +653,6 @@
 
       <div class="carrossel">
         <div class="faixa-fotos">
-          <!-- TROQUE AS FOTOS AQUI. Mantenha os nomes ou altere o src -->
           <div class="foto-galeria"><img src="galeria1.jpg" alt="Decoração Valdecor"></div>
           <div class="foto-galeria"><img src="galeria2.jpg" alt="Mesa decorada Valdecor"></div>
           <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
@@ -705,7 +660,6 @@
           <div class="foto-galeria"><img src="galeria5.jpg" alt="Evento Valdecor"></div>
           <div class="foto-galeria"><img src="galeria6.jpg" alt="Detalhes Valdecor"></div>
 
-          <!-- Fotos duplicadas para o carrossel ficar infinito -->
           <div class="foto-galeria"><img src="galeria1.jpg" alt="Decoração Valdecor"></div>
           <div class="foto-galeria"><img src="galeria2.jpg" alt="Mesa decorada Valdecor"></div>
           <div class="foto-galeria"><img src="galeria3.jpg" alt="Cerimônia Valdecor"></div>
@@ -717,7 +671,7 @@
     </div>
   </section>
 
-  <!-- 5. AVALIAÇÕES: seção pronta para ativar depois -->
+  <!-- 5. AVALIAÇÕES: pronta para ativar depois -->
   <section class="avaliacoes" id="avaliacoes">
     <div class="container">
       <div class="intro-centro">
@@ -736,7 +690,6 @@
   <!-- 6. CONTATO FINAL -->
   <section class="contato" id="contato">
     <div class="contato-box reveal">
-      <!-- TROQUE A LOGO FINAL AQUI -->
       <img src="logo-valdecor.png" alt="Logo Valdecor" class="logo-final">
 
       <h2>Seu evento merece uma decoração inesquecível.</h2>
@@ -757,7 +710,6 @@
   </footer>
 
   <script>
-    // Links editáveis
     document.querySelectorAll('.whatsapp-link').forEach(link => {
       link.href = LINK_WHATSAPP;
     });
@@ -766,7 +718,6 @@
       link.href = LINK_INSTAGRAM;
     });
 
-    // Menu muda ao rolar
     const topo = document.getElementById('topo');
 
     window.addEventListener('scroll', () => {
@@ -777,7 +728,6 @@
       }
     });
 
-    // Menu mobile
     const btnMenu = document.getElementById('btnMenu');
     const menu = document.getElementById('menu');
 
@@ -791,7 +741,6 @@
       });
     });
 
-    // Animação ao rolar
     const elementos = document.querySelectorAll('.reveal');
 
     function revelarAoRolar() {
