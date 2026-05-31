@@ -123,16 +123,15 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      color: white;
-      font-size: 1.8rem;
-      font-weight: 700;
-      transition: 0.35s ease;
-    }
+  display: flex;
+  align-items: center;
+}
 
-    header.rolado .nav-logo {
-      color: var(--vinho);
-    }
+.nav-logo img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
 
     .menu {
       display: flex;
@@ -141,7 +140,7 @@
     }
 
     .menu a {
-      color: white;
+      color: #7A3F3A;
       font-size: 0.92rem;
       font-weight: 500;
       transition: 0.35s ease;
@@ -171,7 +170,7 @@
       display: none;
       background: none;
       border: none;
-      color: white;
+      color: #7A3F3A;
       font-size: 1.8rem;
       cursor: pointer;
     }
@@ -553,7 +552,9 @@
 
   <header id="topo">
     <nav>
-      <a href="#home" class="nav-logo">Valdecor</a>
+      <a href="#home" class="nav-logo">
+  <img src="logo-escrita-valdecor.png" alt="Valdecor">
+</a>
 
       <button class="menu-mobile" id="btnMenu" aria-label="Abrir menu">☰</button>
 
