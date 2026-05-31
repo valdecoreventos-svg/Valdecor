@@ -67,6 +67,9 @@
       line-height: 1;
       margin-bottom: 22px;
     }
+    .titulo-sobre {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
 
     .texto {
       font-size: 1rem;
@@ -195,7 +198,13 @@
       transform: translateX(-50%);
       z-index: 5;
     }
-
+.cta-home{
+  position:absolute;
+  top:-30px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:20;
+}
     /* QUEM SOMOS */
     .quem-somos {
       background: var(--fundo);
@@ -577,21 +586,25 @@
   </a>
 
   <!-- 1. HOME / CAPA -->
-  <section class="home" id="home">
-    <div class="home-conteudo">
-      <a href="#" class="btn whatsapp-link">Solicitar orçamento</a>
-    </div>
-  </section>
+ <section class="home" id="home">
+</section>
 
   <!-- 2. QUEM SOMOS -->
   <section class="quem-somos" id="quem-somos">
+
+  <div class="cta-home">
+    <a href="#" class="btn whatsapp-link">
+      Solicitar orçamento
+    </a>
+  </div>
+
     <div class="container sobre-grid reveal">
       <div class="foto-sobre">
         <img src="responsavel.jpg" alt="Responsável pela Valdecor">
       </div>
 
       <div class="card-texto">
-        <h2 class="titulo">Quem Somos</h2>
+        <h2 class="titulo titulo-sobre">Quem Somos</h2>
         <p class="texto">
           A Valdecor nasceu do amor pelos detalhes e da paixão por transformar momentos especiais em memórias inesquecíveis. Atuamos com decoração e cerimonial, cuidando de cada etapa do seu evento com carinho, organização e dedicação.
         </p>
