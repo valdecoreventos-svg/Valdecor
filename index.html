@@ -351,7 +351,7 @@
       margin-bottom: 28px;
     }
     .social {
-      margin: 22px auto 0;
+      margin: 52px auto 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -387,6 +387,12 @@
       z-index: 1000;
       box-shadow: 0 14px 35px rgba(201, 93, 85, 0.38);
       transition: 0.35s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .whatsapp-fixo.mostrar {
+      opacity: 1;
+      pointer-events: auto;
     }
     .whatsapp-fixo:hover {
       transform: scale(1.08) translateY(-3px);
@@ -413,8 +419,6 @@
         height: 52px;
         right: 15px;
         bottom: 15px;
-        opacity: 1;
-        pointer-events: auto;
       }
       .whatsapp-fixo svg {
         width: 24px;
@@ -481,6 +485,20 @@
       .titulo-galeria {
         font-size: clamp(2rem, 9vw, 3.2rem);
       }
+      .carrossel {
+        overflow-x: scroll !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+      }
+      .carrossel::-webkit-scrollbar {
+        display: none;
+      }
+      .faixa-fotos {
+        animation: none !important;
+        transform: none !important;
+        width: max-content;
+      }
       .foto-galeria {
         min-width: 260px;
         height: 350px;
@@ -494,23 +512,9 @@
       .contato h2 {
         font-size: clamp(2rem, 9vw, 3.2rem);
       }
-      @keyframes rolarFotos {
-        from { transform: translateX(0); }
-        to { transform: translateX(calc(-284px * 6)); }
-     .carrossel {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carrossel::-webkit-scrollbar {
-  display: none;
-}
-
-.faixa-fotos {
-  animation: none;
-  width: max-content;
-}}
+      .social {
+        margin-top: 70px;
+      }
     }
   </style>
 </head>
@@ -654,11 +658,17 @@
       link.href = LINK_INSTAGRAM;
     });
     const topo = document.getElementById('topo');
+    const whatsappFixo = document.querySelector('.whatsapp-fixo');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 60) {
         topo.classList.add('rolado');
       } else {
         topo.classList.remove('rolado');
+      }
+      if (window.scrollY > window.innerHeight * 0.75) {
+        whatsappFixo.classList.add('mostrar');
+      } else {
+        whatsappFixo.classList.remove('mostrar');
       }
     });
     const btnMenu = document.getElementById('btnMenu');
