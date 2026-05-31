@@ -480,18 +480,13 @@
       .whatsapp-fixo {
   width: 52px;
   height: 52px;
-  right: 15px;
-  bottom: 15px;
+  right: 18px;
+  bottom: 115px;
   opacity: 0;
   pointer-events: none;
   transform: scale(0.9);
 }
 
-.whatsapp-fixo.mostrar {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
 
       .menu-mobile {
         display: block;
@@ -783,12 +778,6 @@ window.addEventListener('scroll', () => {
     topo.classList.remove('rolado');
   }
 
-  if (window.scrollY > window.innerHeight * 0.75) {
-    whatsappFixo.classList.add('mostrar');
-  } else {
-    whatsappFixo.classList.remove('mostrar');
-  }
-});
 
     const btnMenu = document.getElementById('btnMenu');
     const menu = document.getElementById('menu');
